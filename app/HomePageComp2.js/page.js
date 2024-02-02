@@ -17,7 +17,7 @@ import a6 from '../assets/a6.jpg';
 import a7 from '../assets/a7.jpg';
 import a8 from '../assets/a8.png';
 import a9 from '../assets/a9.jpg';
-
+import img1 from '../assets/img1.png';
 
 const list = [
     {
@@ -251,9 +251,37 @@ const HomePageComp2 = () => {
                                 </Grid>
                             </Grid>
                             <Grid container sx={{mt:'7px'}}>
-                                <Grid item xs={12} sx={{border:'1px solid red'}}>
-                                    <Grid container sx={{height:'50px', bgcolor:'red'}}>
-                                       <Grid item xs={11.8} sx={{border:'1px solid green'}}>
+                                <Grid item xs={12} >
+                                    <Grid container sx={{ p:'10px', bgcolor:'white'}} component={Paper}>
+                                       <Grid item xs={12} >
+                                        <Grid container>
+                                            <Grid item xs={3} >
+                                                <Box sx={{width:'200px', height:'100px', }}>
+                                                <Image src={img1} style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'3px'}}/>
+                                                </Box>
+
+
+                                            </Grid>
+
+                                            <Grid item xs={9} >
+                                                <Typography sx={{fontSize:'16px', fontWeight:'bold'}}>Salient Features of IND-BUDGET 2024</Typography>
+                                                <Typography sx={{color:'#9e9e9e',fontSize:'14px', mt:'6px'}}>The Finance Minister of India, Nirmala Sitharaman, presented an interim budget for FY 2024–2025 on February 1, 2024. The government has attempted to focus on every aspect.</Typography>
+                                               
+                                            <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'center', mt:'5px'}}>
+                                                <Grid item xs={2}>
+                                                    <Box sx={{border:'1px solid orange'}}>
+                                                        <Typography sx={{textAlign:'center', color:'orange'}}>News</Typography>
+                                                    </Box>
+
+                                                </Grid>
+                                                <Grid item xs={2}>
+                                                    <Typography sx={{color:'#9e9e9e',fontSize:'12px', mt:'6px'}}>2024-02-02 11:57</Typography>
+                                                </Grid>
+                                            </Grid>
+
+                                            </Grid>
+
+                                        </Grid>
 
                                        </Grid>
                                     </Grid>
