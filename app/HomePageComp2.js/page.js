@@ -21,9 +21,9 @@ const HomePageComp2 = () => {
     }
     return (
         <>
-            <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: '#fafafa', border: '1px solid green' }}>
+            <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: '#fafafa',pt:'20px' }}>
                 <Grid item xs={10}>
-                    <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'center', border:'2px solid blue'}}>
+                    <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'center', }}>
                         <Grid item xs={3.9} sx={{ border: '4px solid #b28936', }}>
                             <Grid container>
                                 <Grid item xs={12}>
@@ -60,7 +60,7 @@ const HomePageComp2 = () => {
                             </Grid>
 
                         </Grid>
-                        <Grid item xs={8} sx={{ border:'2px solid red' }}>
+                        <Grid item xs={8} sx={{  }}>
                             <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                                 <Grid item xs={8} sx={{display:'flex'}}>
                                     <Grid container>
