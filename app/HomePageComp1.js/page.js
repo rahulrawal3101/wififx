@@ -63,12 +63,16 @@ const HomePageComp1 = () => {
 
                 </Grid>
 
-                <Grid item xs={10} sx={{ p: '40px 0px 55px 0px'}}>
+                <Grid item xs={10} sx={{ p: '40px 0px 25px 0px'}}>
                     <Typography sx={{ fontSize: '43px', fontWeight: 'bold', fontStyle: 'italic', textAlign: 'center' }}>Global Broker governance & inquiry App!</Typography>
+                    <Box>
+                        <Typography sx={{color:'#b28936', fontSize:'25px',textAlign: 'center', mt:'15px', fontFamily:'sans-serif', }}>53648 <span style={{color:'#bdbdbd', fontSize:'20px'}}>brokers enlisted. Collaborating with </span>60 <span style={{color:'#bdbdbd', fontSize:'20px'}}>regulators</span></Typography>
+                        
+                    </Box>
 
                 </Grid>
 
-                <Grid item xs={10} sx={{  p: '40px 0px 30px 0px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Grid item xs={10} sx={{  p: '10px 0px 10px 0px', display: 'flex', justifyContent: 'center', alignItems: 'center' ,}}>
                     <Box sx={{ width: '75%', border: '3px solid #b28936', height: '55px', bgcolor: 'white', p: '5px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <SearchIcon sx={{ fontSize: '30px', color: 'lightgrey', ml: '10px' }} />
                         <InputBase placeholder='Please enter the name of the broker for inquiries' sx={{ width: '82%', fontSize: '20px', }} />
