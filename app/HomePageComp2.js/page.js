@@ -24,7 +24,7 @@ const HomePageComp2 = () => {
             <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: '#fafafa',pt:'20px' }}>
                 <Grid item xs={10}>
                     <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'center', }}>
-                        <Grid item xs={3.9} sx={{ border: '4px solid #b28936', }}>
+                        <Grid item xs={3.9} sx={{ border: '5px solid #F1E7D4', }}>
                             <Grid container>
                                 <Grid item xs={12}>
                                     <Grid container>
@@ -60,26 +60,26 @@ const HomePageComp2 = () => {
                             </Grid>
 
                         </Grid>
-                        <Grid item xs={8} sx={{  }}>
+                        <Grid item xs={8} >
                             <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-                                <Grid item xs={8} sx={{display:'flex'}}>
+                                <Grid item xs={8} sx={{display:'flex', ml:'4px'}}>
                                     <Grid container>
-                                    <Grid item xs={1.8} sx={{ p:'10px',borderBottom:'3px solid black'}}>
+                                    <Grid item xs={1.8} sx={{ p:'10px 0px',borderBottom:'3px solid black'}}>
                                         <Typography sx={{textAlign:'center', fontSize:'17px', fontWeight:'bold'}}>Latest</Typography>
                                     </Grid>
-                                    <Grid item xs={1.9} sx={{p:'10px', }}>
+                                    <Grid item xs={1.9} sx={{p:'10px 0px', }}>
                                         <Typography sx={{textAlign:'center', color:'#bdbdbd', '&:hover':{color:'black'}}}>Original</Typography>
                                     </Grid>
-                                    <Grid item xs={1.9} sx={{p:'10px',}}>
+                                    <Grid item xs={1.9} sx={{p:'10px 0px',}}>
                                         <Typography sx={{textAlign:'center' ,color:'#bdbdbd','&:hover':{color:'black'}}}>Industry</Typography>
                                     </Grid>
-                                    <Grid item xs={1.7} sx={{ p:'10px',}}>
+                                    <Grid item xs={1.7} sx={{ p:'10px 0px',}}>
                                         <Typography sx={{textAlign:'center', color:'#bdbdbd','&:hover':{color:'black'}}}>Brokers</Typography>
                                     </Grid>
-                                    <Grid item xs={1.9} sx={{ p:'10px',}}>
+                                    <Grid item xs={1.9} sx={{ p:'10px 0px',}}>
                                         <Typography sx={{textAlign:'center', color:'#bdbdbd','&:hover':{color:'black'}}}>Exposure</Typography>
                                     </Grid>
-                                    <Grid item xs={2.7} sx={{ p:'10px',}}>
+                                    <Grid item xs={2.7} sx={{ p:'10px 0px',}}>
                                         <Typography sx={{textAlign:'center', color:'#bdbdbd','&:hover':{color:'black'}}}>WifiFx Survey</Typography>
                                     </Grid>
                                    
