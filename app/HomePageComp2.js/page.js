@@ -157,12 +157,7 @@ const HomePageComp2 = () => {
     const [bgCol, setBgCol] = useState(false);
     const [col, setCol] = useState(false);
     const [num, setNum] = useState(false);
-    const [textcolor, setTextColor] = useState(
-        {
-            clr:'black',
-
-        }
-    )
+ 
 
     const mouseHoverHandler = () => {
         setBgCol(true);
@@ -174,21 +169,7 @@ const HomePageComp2 = () => {
         setCol(false)
     };
 
-    const changeTextColor=(ele)=>{
-        console.log(ele.no ,ele.id);
-        if(ele.no === ele.id){
-
-            setTextColor({...textcolor,clr:'green'})
-        }else{
-            setTextColor({...textcolor,clr:'black'})
-        }
-
-    };
-
-    const normalState=()=>{
-        setTextColor(false)
-
-    }
+    
     return (
         <>
             <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
@@ -339,7 +320,7 @@ const HomePageComp2 = () => {
                                         list1.map((ele) => {
                                             // console.log(ele)
                                             return (
-                                                <Grid container sx={{ p: '10px', bgcolor: 'white', border: '1px solid #f5f5f5', m: '10px 0px' }} component={Paper} elevation={0} onMouseOver={()=>{changeTextColor(ele)}} onMouseOut={normalState}>
+                                                <Grid container sx={{ p: '10px', bgcolor: 'white', border: '1px solid #f5f5f5', m: '10px 0px' }} component={Paper} elevation={0} >
                                                     <Grid item xs={12}  >
                                                         <Grid container>
                                                             <Grid item xs={3} >
@@ -351,7 +332,7 @@ const HomePageComp2 = () => {
                                                             </Grid>
 
                                                             <Grid item xs={9} sx={{ pl: '7px' }}>
-                                                                <Typography sx={{ fontSize: '16px', fontWeight: 'bold',color:textcolor.clr}}>{ele.title}</Typography>
+                                                                <Typography sx={{ fontSize: '16px', fontWeight: 'bold',color:'black','&:hover':{color:'#b28936'}}}>{ele.title}</Typography>
                                                                 <Typography sx={{ color: '#9e9e9e', fontSize: '14px', mt: '6px' }}>{ele.disc.slice(0,170)}</Typography>
 
                                                                 <Grid container sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '8px', }}>
