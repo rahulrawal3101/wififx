@@ -1,5 +1,5 @@
 'use client'
-import { Box, Grid, Paper, Typography } from '@mui/material';
+import { Box, Button, Grid, Paper, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import StarsIcon from '@mui/icons-material/Stars';
@@ -24,7 +24,9 @@ import img8 from '../assets/img8.png';
 import img9 from '../assets/img9.png';
 import img10 from '../assets/img10.png';
 import img11 from '../assets/img11.png';
-
+import WestIcon from '@mui/icons-material/West';
+import EastIcon from '@mui/icons-material/East';
+import OfflineBoltOutlinedIcon from '@mui/icons-material/OfflineBoltOutlined';
 const list = [
     {
         img: a4,
@@ -254,8 +256,8 @@ const HomePageComp2 = () => {
                                                                     </Box>
 
                                                                 </Box>
-                                                                <Box sx={{ border: '1px solid lightgrey', width: '80px', mt: '4px' }}>
-                                                                    <Typography sx={{ fontSize: '11px', textAlign: 'center', color: '#9e9e9e' }}>{ele.year}</Typography>
+                                                                <Box sx={{ border: '1px solid lightgrey', width: '90px', mt: '4px' }}>
+                                                                    <Typography sx={{ fontSize: '12px', textAlign: 'center', color: '#bdbdbd' }}>{ele.year}</Typography>
 
                                                                 </Box>
 
@@ -370,6 +372,36 @@ const HomePageComp2 = () => {
                                 </Grid>
                             </Grid>
 
+                        </Grid>
+                    </Grid>
+                    <Grid container sx={{p:'10px 0px', justifyContent:'space-between', alignItems:'center'}}>
+                        <Grid item xs={3} >
+                            <Typography sx={{fontSize:'23px', fontWeight:'bold', fontFamily:'inherit', color:'#3d3d3d'}}>Rights Protection Center</Typography>
+                        </Grid>
+                        <Grid item xs={5} sx={{display:'flex', justifyContent:'space-evenly', alignItems:'center'}}>
+                        
+                            <Typography sx={{ textAlign: 'center', color:'#9e9e9e','&:hover':{color:'#212121'} }}>Unable to widthdraw</Typography>
+                            <Typography sx={{ textAlign: 'center', color:'#9e9e9e','&:hover':{color:'#212121'} }}>Severe Slippage</Typography>
+                            <Typography sx={{ textAlign: 'center', color:'#9e9e9e','&:hover':{color:'#212121'} }}>Scam</Typography>
+                            <Typography sx={{ textAlign: 'center', color:'#9e9e9e','&:hover':{color:'#212121'} }}>Others</Typography>
+                        </Grid>
+                        <Grid item xs={3} sx={{display:'flex', justifyContent:'right', alignItems:'center'}}>
+                            <WestIcon sx={{fontSize:'20px', color:'#0277bd',mr:'10px'}}/>
+                            <EastIcon sx={{fontSize:'20px', color:'#0277bd'}}/>
+                        </Grid>
+                    </Grid>
+
+                    <Grid container sx={{p:'15px 10px', justifyContent:'space-between', alignItems:'center', background:'rgba(61,85,204,.03)', border:'1px solid rgba(61,85,204,.1)'}}>
+                        <Grid item xs={4.5} sx={{border:'1px solid red'}}>
+                            <Typography sx={{fontSize:'16px',  color:'#9e9e9e'}}>Amount resolved within one month(USD) <span style={{fontSize:'23px', color:'#3d3d3d', fontWeight:'bold'}}>$59,772,832</span> </Typography>
+                        </Grid>
+                        <Grid item xs={4} sx={{border:'1px solid red', }}>
+                        
+                        <Typography sx={{fontSize:'16px',  color:'#9e9e9e'}}>Number of People Resolved <span style={{fontSize:'23px', color:'#3d3d3d', fontWeight:'bold'}}>14,425</span> </Typography>
+                        </Grid>
+                        <Grid item xs={2} sx={{border:'1px solid red', display:'flex', justifyContent:'right', alignItems:'center'}}>
+                            
+                           <Button sx={{bgcolor:'#3d55cc', color:'white',p:'9px 20px','&:hover':{bgcolor:'#3d55cc'}}}> <OfflineBoltOutlinedIcon sx={{fontSize:'18px',color:'white', mr:'6px'}}/><Typography sx={{fontSize:'13px', textTransform: 'capitalize'}}>Exposure</Typography></Button>
                         </Grid>
                     </Grid>
 
