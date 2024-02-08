@@ -34,7 +34,8 @@ const list = [
         isRegular: 'Regular',
         rank: 9.46,
         year: 'Above 20 years',
-        no: 1
+        no: 1,
+        id:1
     },
     {
         img: a2,
@@ -42,7 +43,8 @@ const list = [
         isRegular: 'Regular',
         rank: 9.03,
         year: '10-20 years',
-        no: 2
+        no: 2,
+        id:2
     },
     {
         img: a6,
@@ -50,7 +52,8 @@ const list = [
         isRegular: 'Regular',
         rank: 9.03,
         year: '10-15 years',
-        no: 3
+        no: 3,
+        id:3
     },
     {
         img: a7,
@@ -58,7 +61,8 @@ const list = [
         isRegular: 'Regular',
         rank: 8.46,
         year: '10-15 years',
-        no: 4
+        no: 4,
+        id:4
     },
     {
         img: a1,
@@ -66,7 +70,8 @@ const list = [
         isRegular: 'Regular',
         rank: 9.46,
         year: '10-15 years',
-        no: 5
+        no: 5,
+        id:5
     },
     {
         img: a8,
@@ -74,7 +79,8 @@ const list = [
         isRegular: 'Regular',
         rank: 9.46,
         year: '10-15 years',
-        no: 6
+        no: 6,
+        id:6
     },
     {
         img: a9,
@@ -82,7 +88,8 @@ const list = [
         isRegular: 'Regular',
         rank: 9.46,
         year: 'Above 20 years',
-        no: 7
+        no: 7,
+        id:7
     },
     {
         img: a10,
@@ -90,7 +97,8 @@ const list = [
         isRegular: 'Regular',
         rank: 9.46,
         year: 'Above 20 years',
-        no: 8
+        no: 8,
+        id:8
     }
 ];
 
@@ -171,7 +179,7 @@ const HomePageComp2 = () => {
         setCol(false)
     };
 
-    
+  
     return (
         <>
             <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
@@ -214,7 +222,7 @@ const HomePageComp2 = () => {
 
                             {/* map comp  */}
 
-                            <Grid container sx={{ mt: '10px', bgcolor: 'white' }}>
+                            <Grid container sx={{ mt: '10px', bgcolor: 'white', }}>
                                 {
                                     list.map((ele, index) => {
                                         return (
@@ -263,9 +271,13 @@ const HomePageComp2 = () => {
 
                                                             </Grid>
                                                             <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
+                                                           
                                                                 <Box sx={{ width: '17px', height: '22px', bgcolor: '#eeeeee', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '4px' }}>
                                                                     <Typography sx={{ color: '#bdbdbd', fontSize: '12px' }}>{ele.no}</Typography>
                                                                 </Box>
+                                                            
+
+                                                              
 
                                                             </Grid>
                                                         </Grid>
@@ -392,16 +404,16 @@ const HomePageComp2 = () => {
                     </Grid>
 
                     <Grid container sx={{p:'15px 10px', justifyContent:'space-between', alignItems:'center', background:'rgba(61,85,204,.03)', border:'1px solid rgba(61,85,204,.1)'}}>
-                        <Grid item xs={4.5} sx={{border:'1px solid red'}}>
+                        <Grid item xs={4.5} >
                             <Typography sx={{fontSize:'16px',  color:'#9e9e9e'}}>Amount resolved within one month(USD) <span style={{fontSize:'23px', color:'#3d3d3d', fontWeight:'bold'}}>$59,772,832</span> </Typography>
                         </Grid>
-                        <Grid item xs={4} sx={{border:'1px solid red', }}>
+                        <Grid item xs={4} >
                         
                         <Typography sx={{fontSize:'16px',  color:'#9e9e9e'}}>Number of People Resolved <span style={{fontSize:'23px', color:'#3d3d3d', fontWeight:'bold'}}>14,425</span> </Typography>
                         </Grid>
-                        <Grid item xs={2} sx={{border:'1px solid red', display:'flex', justifyContent:'right', alignItems:'center'}}>
+                        <Grid item xs={2.5} sx={{ display:'flex', justifyContent:'right', alignItems:'center'}}>
                             
-                           <Button sx={{bgcolor:'#3d55cc', color:'white',p:'9px 20px','&:hover':{bgcolor:'#3d55cc'}}}> <OfflineBoltOutlinedIcon sx={{fontSize:'18px',color:'white', mr:'6px'}}/><Typography sx={{fontSize:'13px', textTransform: 'capitalize'}}>Exposure</Typography></Button>
+                           <Button sx={{bgcolor:'#3d55cc', color:'white',p:'13px 35px','&:hover':{bgcolor:'#3d55cc'}}}> <OfflineBoltOutlinedIcon sx={{fontSize:'23px',color:'white', mr:'6px'}}/><Typography sx={{fontSize:'16px', textTransform: 'capitalize'}}>Exposure</Typography></Button>
                         </Grid>
                     </Grid>
 
