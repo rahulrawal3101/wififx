@@ -1,5 +1,5 @@
 'use client'
-import { Box, Button, Grid, Paper, Typography } from '@mui/material';
+import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Paper, Select, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import React from 'react';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import rlogo from '../assets/rlogo.jpg';
@@ -24,6 +24,109 @@ import express from '../assets/express.png';
 import xm from '../assets/xm.png';
 import fxtm from '../assets/fxtm.png';
 import gmi from '../assets/gmi.png';
+import forex from '../assets/forex.png';
+import avatrade from '../assets/avatrade.png';
+import pepperstone from '../assets/pepperstone.png';
+import thinkmarket from '../assets/thinkmarket.png';
+import fxcm from '../assets/fxcm.png';
+import a1 from '../assets/a1.jpg';
+import a6 from '../assets/a6.jpg';
+import a4 from '../assets/a4.png';
+import a11 from '../assets/a11.jpg';
+import a7 from '../assets/a7.jpg';
+import a2 from '../assets/a2.png';
+import phone from '../assets/phone.png';
+
+const imgData = [
+    {
+        img: a1,
+        isRegular: 'Regular',
+        name: 'IC Markets'
+    },
+    {
+        img: a6,
+        isRegular: 'Regular',
+        name: 'STAR TRADER'
+    },
+    {
+        img: a4,
+        isRegular: 'Regular',
+        name: 'FXCM'
+    },
+    {
+        img: a11,
+        isRegular: 'Regular',
+        name: 'IC Markets'
+    },
+    {
+        img: a7,
+        isRegular: 'Regular',
+        name: 'FOREX'
+    },
+    {
+        img: a2,
+        isRegular: 'Regular',
+        name: 'XM'
+    }
+]
+
+const bdyTable = [
+    {
+        logo: forex,
+        name: 'FOREX.com',
+        acc: 'Standard',
+        buy: 1.0987,
+        sell: 1.1233,
+        spread: 1.4,
+        avgSpdday: 1.38,
+        lgPtionLot: 0.00,
+        StPtionLot: 0.00
+    },
+    {
+        logo: avatrade,
+        name: 'AvaTrade',
+        acc: 'Standard',
+        buy: 1.0987,
+        sell: 1.1233,
+        spread: 1.4,
+        avgSpdday: 1.38,
+        lgPtionLot: 0.00,
+        StPtionLot: 0.00
+    },
+    {
+        logo: pepperstone,
+        name: 'Pepperstone',
+        acc: 'Standard',
+        buy: 1.0987,
+        sell: 1.1233,
+        spread: 1.4,
+        avgSpdday: 1.38,
+        lgPtionLot: 0.00,
+        StPtionLot: 0.00
+    },
+    {
+        logo: thinkmarket,
+        name: 'ThinkMarket',
+        acc: 'Standard',
+        buy: 1.0987,
+        sell: 1.1233,
+        spread: 1.4,
+        avgSpdday: 1.38,
+        lgPtionLot: 0.00,
+        StPtionLot: 0.00
+    },
+    {
+        logo: fxcm,
+        name: 'FXCM',
+        acc: 'Standard',
+        buy: 1.0987,
+        sell: 1.1233,
+        spread: 1.4,
+        avgSpdday: 1.38,
+        lgPtionLot: 0.00,
+        StPtionLot: 0.00
+    }
+]
 
 
 const arrData = [
@@ -178,7 +281,9 @@ const totalMargin = [
         rank: 1
     },
 
-]
+];
+
+const tableHead = ['Brokers', 'Accounts', 'Buy', 'Sell', 'Spread', 'Average spread/day', 'long Position Swap USD/Lot', 'Short Position Swap USD/Lot']
 
 
 
@@ -506,7 +611,7 @@ const HomePageCompo3 = () => {
 
                             </Grid>
 
-                            <Grid container sx={{ border: '1px solid green' }}>
+                            <Grid container>
                                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'left', alignItems: 'center', borderBottom: '3px solid #3D3D3D' }}>
                                     <Typography sx={{ textAlign: 'left', fontSize: '22px', fontWeight: 'bold', fontFamily: 'serif', color: '#3D3D3D' }}>Ranking List</Typography>
                                     <Box sx={{ ml: '40px' }}>
@@ -517,8 +622,10 @@ const HomePageCompo3 = () => {
 
 
                                 </Grid>
-                                <Grid container sx={{ mt: '20px', mb:'20px' }}>
-                                    <Grid item xs={3.8} sx={{ p: '15px', bgcolor: 'white', border: '2px solid #f5f5f5' }}>
+
+                                {/* ranking list  */}
+                                <Grid container sx={{ mt: '20px', mb: '20px', justifyContent: 'space-between', alignItems: 'flex-start', }}>
+                                    <Grid item lg={3.8} sx={{ p: '15px', bgcolor: 'white', border: '2px solid #f5f5f5' }}>
                                         <Typography sx={{ color: '#3D3D3D', fontSize: '16px', fontFamily: 'serif', fontWeight: 'bold' }}>Total Margin</Typography>
 
                                         <Grid container sx={{ mt: '10px' }}>
@@ -583,8 +690,292 @@ const HomePageCompo3 = () => {
                                         </Grid>
 
                                     </Grid>
+
+                                    <Grid item xs={3.8} sx={{ p: '15px', bgcolor: 'white', border: '2px solid #f5f5f5' }}>
+                                        <Typography sx={{ color: '#3D3D3D', fontSize: '16px', fontFamily: 'serif', fontWeight: 'bold' }}>Active Trading Ranking</Typography>
+
+                                        <Grid container sx={{ mt: '10px' }}>
+                                            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
+                                                <Box sx={{ p: '4px 15px', bgcolor: 'white', border: '1px solid #eeeeee' }}>
+                                                    <Typography sx={{ fontSize: '15px', fontWeight: 'bold' }}>30 days</Typography>
+                                                </Box>
+                                                <Box sx={{ p: '4px 15px', bgcolor: '#fafafa', border: '1px solid #eeeeee' }}>
+                                                    <Typography sx={{ fontSize: '15px', color: '#a3a3a3' }}>90 days</Typography>
+                                                </Box>
+                                                <Box sx={{ p: '4px 15px', bgcolor: '#fafafa', border: '1px solid #eeeeee' }}>
+                                                    <Typography sx={{ fontSize: '15px', color: '#a3a3a3' }}>6 months</Typography>
+                                                </Box>
+                                            </Grid>
+                                            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '10px' }}>
+                                                <Box sx={{ ml: '8px' }}>
+                                                    <Typography sx={{ fontSize: '13px', color: '#e0e0e0' }}>Brokerage</Typography>
+                                                </Box>
+                                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+
+                                                        <Typography sx={{ fontSize: '13px', color: '#e0e0e0' }}>Total Assets%</Typography>
+                                                        <Typography sx={{ fontSize: '13px', color: '#e0e0e0', ml: '20px' }}>Ranking</Typography>
+                                                    </Box>
+
+                                                </Box>
+
+                                            </Grid>
+
+                                            <Grid container >
+                                                {
+                                                    totalMargin.map((ele, index) => {
+                                                        return (
+                                                            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '17px' }}>
+                                                                <Box sx={{ display: 'flex', justifyContent: 'left', alignItems: 'center', }}>
+                                                                    <Box sx={{ width: '20px', height: '20px', bgcolor: '#e8eaf6' }}>
+                                                                        <Typography sx={{ fontSize: '12px', textAlign: 'center' }}>{index + 1}</Typography>
+                                                                    </Box>
+
+                                                                    <Box sx={{ width: '20px', height: '20px', ml: '10px' }}>
+                                                                        <Image src={ele.img} style={{ width: '100%', height: '100%' }} />
+                                                                    </Box>
+                                                                    <Typography sx={{ fontSize: '15px', fontFamily: 'serif', ml: '7px' }}>{ele.name}</Typography>
+                                                                </Box>
+                                                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+
+                                                                        <Typography sx={{ fontSize: '17px', color: '#3d3d3d', fontWeight: 'bold', mr: '50px' }}>{ele.totalAssests}</Typography>
+                                                                        <Typography sx={{ fontSize: '17px', color: '#e0e0e0', ml: '20px' }}>--</Typography>
+                                                                    </Box>
+
+
+                                                                </Box>
+
+                                                            </Grid>
+                                                        )
+                                                    })
+                                                }
+
+
+                                            </Grid>
+                                        </Grid>
+
+                                    </Grid>
+
+
+                                    <Grid item xs={3.8} sx={{ p: '15px', bgcolor: 'white', border: '2px solid #f5f5f5' }}>
+                                        <Typography sx={{ color: '#3D3D3D', fontSize: '16px', fontFamily: 'serif', fontWeight: 'bold' }}>Total lots</Typography>
+
+                                        <Grid container sx={{ mt: '10px' }}>
+                                            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
+                                                <Box sx={{ p: '4px 15px', bgcolor: 'white', border: '1px solid #eeeeee' }}>
+                                                    <Typography sx={{ fontSize: '15px', fontWeight: 'bold' }}>30 days</Typography>
+                                                </Box>
+                                                <Box sx={{ p: '4px 15px', bgcolor: '#fafafa', border: '1px solid #eeeeee' }}>
+                                                    <Typography sx={{ fontSize: '15px', color: '#a3a3a3' }}>90 days</Typography>
+                                                </Box>
+                                                <Box sx={{ p: '4px 15px', bgcolor: '#fafafa', border: '1px solid #eeeeee' }}>
+                                                    <Typography sx={{ fontSize: '15px', color: '#a3a3a3' }}>6 months</Typography>
+                                                </Box>
+                                            </Grid>
+                                            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '10px' }}>
+                                                <Box sx={{ ml: '8px' }}>
+                                                    <Typography sx={{ fontSize: '13px', color: '#e0e0e0' }}>Brokerage</Typography>
+                                                </Box>
+                                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+
+                                                        <Typography sx={{ fontSize: '13px', color: '#e0e0e0' }}>Total Assets%</Typography>
+                                                        <Typography sx={{ fontSize: '13px', color: '#e0e0e0', ml: '20px' }}>Ranking</Typography>
+                                                    </Box>
+
+                                                </Box>
+
+                                            </Grid>
+
+                                            <Grid container >
+                                                {
+                                                    totalMargin.map((ele, index) => {
+                                                        return (
+                                                            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '17px' }}>
+                                                                <Box sx={{ display: 'flex', justifyContent: 'left', alignItems: 'center', }}>
+                                                                    <Box sx={{ width: '20px', height: '20px', bgcolor: '#e8eaf6' }}>
+                                                                        <Typography sx={{ fontSize: '12px', textAlign: 'center' }}>{index + 1}</Typography>
+                                                                    </Box>
+
+                                                                    <Box sx={{ width: '20px', height: '20px', ml: '10px' }}>
+                                                                        <Image src={ele.img} style={{ width: '100%', height: '100%' }} />
+                                                                    </Box>
+                                                                    <Typography sx={{ fontSize: '15px', fontFamily: 'serif', ml: '7px' }}>{ele.name}</Typography>
+                                                                </Box>
+                                                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+
+                                                                        <Typography sx={{ fontSize: '17px', color: '#3d3d3d', fontWeight: 'bold', mr: '50px' }}>{ele.totalAssests}</Typography>
+                                                                        <Typography sx={{ fontSize: '17px', color: '#e0e0e0', ml: '20px' }}>--</Typography>
+                                                                    </Box>
+
+
+                                                                </Box>
+
+                                                            </Grid>
+                                                        )
+                                                    })
+                                                }
+
+
+                                            </Grid>
+                                        </Grid>
+
+                                    </Grid>
+
                                 </Grid>
                             </Grid>
+
+
+                            {/* Real time spred  */}
+
+                            <Grid container sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                <Grid item xs={7.9} >
+                                    <Grid container sx={{ borderBottom: '3px solid #3d3d3d', p: '0px 0px 9px 0px' }}>
+                                        <Grid item xs={8}>
+                                            <Typography sx={{ textAlign: 'left', fontSize: '22px', fontWeight: 'bold', fontFamily: 'serif', color: '#3D3D3D' }}>Real-time spread comparison <span>EURUSD</span></Typography>
+
+                                        </Grid>
+                                        <Grid item xs={4} sx={{ display: 'flex', justifyContent: 'right', alignItems: 'center' }}>
+                                            <Typography sx={{ fontSize: '17px', color: '#3d3d3d', mr: '20px' }}>Tradings Pairs</Typography>
+
+                                            <FormControl sx={{ width: '130px', bgcolor: 'white' }} size='small'>
+
+                                                <Select>
+                                                    <MenuItem value={'EURUSD'}>EURUSD</MenuItem>
+                                                    <MenuItem value={'USDJPY'}>USDJPY</MenuItem>
+                                                    <MenuItem value={'HBHAVU'}>HBHAVU</MenuItem>
+                                                    <MenuItem value={'UPYHGG'}>UPYHGG</MenuItem>
+                                                </Select>
+                                            </FormControl>
+
+                                        </Grid>
+                                    </Grid>
+
+                                    {/* table  */}
+                                    <Grid container>
+                                        <Grid item xs={12}>
+                                            <TableContainer>
+                                                <Table>
+                                                    <TableHead>
+                                                        <TableRow >
+                                                            {
+                                                                tableHead.map((ele, index) => {
+                                                                    return (
+                                                                        <TableCell key={index}>
+                                                                            <Box sx={{ width: '120px' }}>
+                                                                                <Typography sx={{ fontSize: '14px', color: '#ccc', textAlign: 'center' }}>{ele}</Typography>
+                                                                            </Box>
+                                                                        </TableCell>
+                                                                    )
+                                                                })
+                                                            }
+
+
+
+
+                                                        </TableRow>
+
+
+                                                    </TableHead>
+                                                    <TableBody>
+                                                        {
+                                                            bdyTable.map((ele, index) => {
+                                                                return (
+                                                                    <TableRow>
+
+                                                                        <TableCell sx={{ display: 'flex', justifyContent: 'left', alignItems: 'center' }}>
+                                                                            <Box sx={{ width: '20px', height: '20px', }}>
+                                                                                <Image src={ele.logo} style={{ width: '100%', height: '100%' }} />
+                                                                            </Box>
+                                                                            <Typography sx={{ ml: '5px', fontSize: '15px', fontFamily: 'sans-serif', fontWeight: 'bold' }}>{ele.name}</Typography>
+
+
+                                                                        </TableCell>
+                                                                        <TableCell sx={{ color: '#7a7a7a', fontSize: '16px', textAlign: 'center' }}>{ele.acc}</TableCell>
+                                                                        <TableCell sx={{ color: '#7a7a7a', fontSize: '16px', textAlign: 'center', color: '#d32f2f', }}>{ele.buy}</TableCell>
+                                                                        <TableCell sx={{ color: '#7a7a7a', fontSize: '16px', textAlign: 'center', color: 'green' }}>{ele.sell}</TableCell>
+                                                                        <TableCell sx={{ color: '#7a7a7a', fontSize: '16px', textAlign: 'center' }}>{ele.spread}</TableCell>
+                                                                        <TableCell sx={{ color: '#7a7a7a', fontSize: '16px', textAlign: 'center' }}>{ele.avgSpdday}</TableCell>
+                                                                        <TableCell sx={{ color: '#7a7a7a', fontSize: '16px', textAlign: 'center' }}>{ele.lgPtionLot}</TableCell>
+                                                                        <TableCell sx={{ color: '#7a7a7a', fontSize: '16px', textAlign: 'center' }}>{ele.StPtionLot}</TableCell>
+                                                                    </TableRow>
+                                                                )
+
+
+                                                            })
+                                                        }
+
+
+                                                    </TableBody>
+                                                </Table>
+                                            </TableContainer>
+
+                                        </Grid>
+                                    </Grid>
+
+                                </Grid>
+                                <Grid item xs={3.75} sx={{ p: '10px', bgcolor: 'white' }}>
+                                    <Grid container>
+                                        <Grid item xs={12}>
+                                            <Typography sx={{ fontSize: '20px', fontWeight: 'bold', fontFamily: 'serif', color: '#3D3D3D' }}>WifiFX Broker</Typography>
+                                        </Grid>
+                                        <Grid container sx={{ justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                            {
+                                                imgData.map((ele) => {
+                                                    return (
+                                                        <Grid item xs={5.5} sx={{ position: 'relative', border: '1px solid #bdbdbd', borderRadius: '6px', mt: '13px', '&:hover': { border: '1px solid orange' } }}>
+                                                            <Box sx={{ height: '85px', }}>
+                                                                <Image src={ele.img} style={{ width: '100%', height: '100%', borderRadius: '8px' }} />
+
+                                                            </Box>
+                                                            <Box sx={{ bgcolor: '#fafafa', borderRadius: '0px 0px 8px 8px' }}>
+                                                                <Typography sx={{ fontSize: '17px', color: '#3d3d3d', textAlign: 'center' }}>{ele.name}</Typography>
+                                                            </Box>
+                                                            <Box sx={{ p: '0px 4px', bgcolor: '#66bb6a', width: '50px', position: 'absolute', top: '0px', borderRadius: '5px 0px 0px 0px' }}>
+                                                                <Typography sx={{ fontSize: '11px', color: 'white', textAlign: 'center' }}>{ele.isRegular}</Typography>
+                                                            </Box>
+
+                                                        </Grid>
+                                                    )
+                                                })
+                                            }
+
+                                        </Grid>
+                                    </Grid>
+
+
+                                </Grid>
+
+                            </Grid>
+
+
+                            {/* last part  */}
+                            <Grid container sx={{ border: '1px solid red', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                <Grid item xs={7.9} sx={{ border: '1px solid green', mt: '60px' }}>
+                                    <Typography sx={{ fontSize: '27px', color: 'black', fontStyle: 'italic', fontWeight: 'bold' }}>To view more</Typography>
+                                    <Typography sx={{ fontSize: '40px', color: '#b38936', fontStyle: 'italic', fontWeight: '800' }}>Please download WikiFX APP</Typography>
+                                    <Typography sx={{ fontSize: '22px', color: 'black', fontStyle: 'italic', }}>Know More and Enjoy more</Typography>
+
+
+                                    <Grid container>
+                                        <Grid item xs={5}>
+
+                                        </Grid>
+                                    </Grid>
+
+                                </Grid>
+                                <Grid item xs={3.75} sx={{ border: '1px solid green' }}>
+                                <Box sx={{wiidth:'90%',height:'80%',}}>
+                                <Image src={phone} style={{width:'100%',height:'100%'}}/>
+                                </Box>
+
+                                </Grid>
+
+                            </Grid>
+
+
                         </Grid>
 
 
