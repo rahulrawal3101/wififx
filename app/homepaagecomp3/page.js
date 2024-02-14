@@ -36,6 +36,40 @@ import a11 from '../assets/a11.jpg';
 import a7 from '../assets/a7.jpg';
 import a2 from '../assets/a2.png';
 import phone from '../assets/phone.png';
+import AppleIcon from '@mui/icons-material/Apple';
+import VerticalAlignBottomIcon from '@mui/icons-material/VerticalAlignBottom';
+import AdbIcon from '@mui/icons-material/Adb';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
+
+const arrDownload = [
+    {
+        icon: <AppleIcon sx={{ fontSize: '35px' }} />,
+        down: 'Download on the',
+        name: 'WifiFX (Global)',
+        icon1: <VerticalAlignBottomIcon sx={{ fontSize: '35px' }} />
+    },
+    {
+        icon: <AppleIcon sx={{ fontSize: '35px' }} />,
+        down: 'Download on the',
+        name: '外汇天眼（中国）',
+        icon1: <VerticalAlignBottomIcon sx={{ fontSize: '35px' }} />
+    },
+    {
+        icon: <AppleIcon sx={{ fontSize: '35px' }} />,
+        down: 'Download on the',
+        name: 'WifiFX google play',
+        icon1: <VerticalAlignBottomIcon sx={{ fontSize: '35px' }} />
+    },
+    {
+        icon: <AdbIcon sx={{ fontSize: '35px', color: 'green' }} />,
+        down: 'Download on the',
+        name: 'WifiFX (Global)',
+        icon1: <VerticalAlignBottomIcon sx={{ fontSize: '35px' }} />
+    }
+]
 
 const imgData = [
     {
@@ -943,6 +977,7 @@ const HomePageCompo3 = () => {
                                             }
 
                                         </Grid>
+
                                     </Grid>
 
 
@@ -952,24 +987,46 @@ const HomePageCompo3 = () => {
 
 
                             {/* last part  */}
-                            <Grid container sx={{ border: '1px solid red', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                                <Grid item xs={7.9} sx={{ border: '1px solid green', mt: '60px' }}>
+                            <Grid container sx={{  justifyContent: 'space-between', alignItems: 'flex-start', mt: '60px' }}>
+                                <Grid item xs={5.9} sx={{  mt: '60px' }}>
                                     <Typography sx={{ fontSize: '27px', color: 'black', fontStyle: 'italic', fontWeight: 'bold' }}>To view more</Typography>
                                     <Typography sx={{ fontSize: '40px', color: '#b38936', fontStyle: 'italic', fontWeight: '800' }}>Please download WikiFX APP</Typography>
                                     <Typography sx={{ fontSize: '22px', color: 'black', fontStyle: 'italic', }}>Know More and Enjoy more</Typography>
 
 
-                                    <Grid container>
-                                        <Grid item xs={5}>
+                                    <Grid container sx={{ justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                        {
+                                            arrDownload.map((ele) => {
+                                                return (
+                                                    <Grid item xs={5.4} sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', p: '10px 0px', bgcolor: 'white', boxShadow: ' 0 0 0 1px rgba(179,137,54,.3), 0 4px 4px rgba(0,0,0,.05)', mt: '20px' }} component={Paper}>
+                                                        {ele.icon}
+                                                        <Box sx={{ mr: '10px' }}>
+                                                            <Typography sx={{ fontSize: '10px', color: '#a3a3a3' }}>{ele.down}</Typography>
+                                                            <Typography sx={{ color: '#3d3d3d', fontSize: '17px' }}>{ele.name}</Typography>
+                                                        </Box>
+                                                        {ele.icon1}
 
-                                        </Grid>
+
+                                                    </Grid>
+                                                )
+                                            })
+                                        }
+
                                     </Grid>
+                                    <Grid container>
+                                            <Grid item xs={12} sx={{ mt:'50px'}}>
+                                            <FacebookOutlinedIcon sx={{fontSize:'28px', '&:hover':{color:'#0277bd'}}}/>
+                                            <TwitterIcon sx={{fontSize:'28px', ml:'20px' ,'&:hover':{color:'#0277bd'}}}/>
+                                            <LinkedInIcon sx={{fontSize:'28px', ml:'20px', '&:hover':{color:'#0277bd'}}}/>
+
+                                            </Grid>
+                                        </Grid>
 
                                 </Grid>
-                                <Grid item xs={3.75} sx={{ border: '1px solid green' }}>
-                                <Box sx={{wiidth:'90%',height:'80%',}}>
-                                <Image src={phone} style={{width:'100%',height:'100%'}}/>
-                                </Box>
+                                <Grid item xs={3.75} sx={{  }}>
+                                    <Box sx={{ wiidth: '90%', height: '80%',  display: 'flex', justifyContent: 'right', mt: '20px' }}>
+                                        <Image src={phone} style={{ objectFit: 'contain',  }} />
+                                    </Box>
 
                                 </Grid>
 
